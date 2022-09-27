@@ -1,0 +1,20 @@
+
+server:
+  port: 9090
+spring:
+  security:
+    user:
+      name: rodoe
+      password: s3cr3t
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git: 
+          uri: https://github.com/rodoa15/microservicios-produccion.git
+          search-paths: config-data
+          default-label: config-sever
+          username: ${GIT_USER_NAME:rodoa15}
+          password: ${GIT_USER_PASSWORD:117teamoleo}         
+        bootstrap: true
